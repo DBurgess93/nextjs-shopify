@@ -1,4 +1,5 @@
 import { FC } from 'react'
+// import React from 'react'
 import type { AppProps } from 'next/app'
 import Layout from '@components/common/Layout'
 import { builder, Builder } from '@builder.io/react'
@@ -40,8 +41,10 @@ const Noop: FC<{ children: React.ReactNode }> = ({ children }) => (
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout pageProps={pageProps}>
-      <Component {...pageProps} />
-    </Layout>
+    // <React.StrictMode>
+      <Layout pageProps={pageProps}>
+        <Component {...pageProps} />
+      </Layout>
+    // </React.StrictMode>
   )
 }
